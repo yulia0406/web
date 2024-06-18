@@ -1,0 +1,12 @@
+<div class="m-4">
+    <h2>{{title}}</h2>
+    <hr>
+    <div class="form-group mb-4">
+        <label>Введите название должности</label>
+        <input type="text" class="form-control" placeholder="Название должности" [(ngModel)]="name">
+    </div>
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-primary" (click)="save()">Сохранить</button>
+        <button class="btn btn-danger" (click)="close()">Закрыть</button>
+    </div>
+</div>

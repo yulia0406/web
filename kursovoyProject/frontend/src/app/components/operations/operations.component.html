@@ -1,0 +1,47 @@
+
+    <div class="bg-light p-5 rounded">
+        <h1>Типы операций <img src="assets/operations.png" width="20" height="20"></h1>
+        <hr>
+        <div class="mb-4">
+            <div class="btn-group">
+                <button class="btn btn-primary" (click)="addTypeOperations()">Добавить тип операции</button>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">Типы операциий</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let type of typeOperations; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{type.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1>Операции <img src="assets/operations.png" width="20" height="20"></h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">Тип операции</th>
+                    <th scope="col">Операция</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let operation of operations; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{operation.typeOperation.name}}</td>
+                    <td>{{operation.name}}</td>
+                    <td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+

@@ -1,0 +1,40 @@
+
+    <div class="bg-light p-5 rounded">
+        <h1>Сотрудники <img src="assets/employees.png" width="20" height="20"></h1>
+        <hr>
+        <div class="mb-4">
+            <th><button class="btn btn-primary" (click)="openAddEmployeeForm()">Добавить</button></th>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">ФИО</th>
+                    <th scope="col">Пол</th>
+                    <th scope="col">Дата рождения</th>
+                    <th scope="col">Номер</th>
+                    <th scope="col">Департамент</th>
+                    <th scope="col">Должность</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees; index as i" (dblclick) = "openEmployee(employee.id)">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.gender}}</td>
+                    <td>{{employee.birthdate | date:'dd.MM.yyyy'}}</td>
+                    <td>{{employee.number}}</td>
+                    <td>{{employee.department.name}}</td>
+                    <td>{{employee.job.name}}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" (click)="openUpdateEmployeeForm(employee.id, i)">Изменить</button>
+                            <button class="btn btn-primary" (click)="deleteEmployee(employee.id, i)">Удалить</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+

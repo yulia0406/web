@@ -1,0 +1,17 @@
+<div class="m-4">
+    <h2>Список типов операций</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col" class="col-1">№</th>
+                <th scope="col" class="col-3">Название</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let typeOperation of typeOperations; let i = index" (click)="save(typeOperation)">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{typeOperation.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

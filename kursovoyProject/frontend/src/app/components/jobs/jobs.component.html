@@ -1,0 +1,27 @@
+
+    <div class="bg-light p-5 rounded">
+        <h1>Должности <img src="assets/jobs.png" width="20" height="20"></h1>
+        <hr>
+        <div class="mb-4">
+            <th><button class="btn btn-primary" (click)="openAddForm()">Добавить</button></th>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col" class="col-10">Название</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let job of jobs; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{job.name}}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" (click)="openUpdateForm(job.id, i)">Изменить</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

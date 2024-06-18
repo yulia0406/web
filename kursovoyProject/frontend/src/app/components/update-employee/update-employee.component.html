@@ -1,0 +1,34 @@
+<div class="m-4">
+    <h2>{{title}}</h2>
+    <hr>
+    <div>
+        <div class="form-group mb-4">
+            <label>Введите имя сотрудника</label>
+            <input type="text" class="form-control" placeholder="Имя сотрудника" [(ngModel)]="name">
+        </div>
+        <div class="form-group mb-4">
+            <label>Введите пол сотрудника</label>
+            <input type="text" class="form-control" placeholder="Пол сотрудника" [(ngModel)]="gender">
+        </div>
+        <div class="form-group mb-4">
+            <label>Введите дату рождения</label>
+            <input type="date" class="form-control" [(ngModel)]="birthdate">
+        </div>
+        <div class="form-group mb-4">
+            <label>Введите номер телефона</label>
+            <input type="number" class="form-control" [(ngModel)]="number">
+        </div>
+        <div class="form-group mb-4">
+            <label>Введите департамент сотрудника</label>
+            <input readonly type="text" class="form-control" (click)="openDepartments()" value="{{ department ? department.name : ''}}">
+        </div>
+        <div class="form-group mb-4">
+            <label>Введите должность сотрудника</label>
+            <input readonly type="text" class="form-control" (click)="openJobs()" value="{{ job ? job.name : ''}}">
+        </div>
+    </div>
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-primary" (click)="save()">Сохранить</button>
+        <button class="btn btn-danger" (click)="close()">Закрыть</button>
+    </div>
+</div>

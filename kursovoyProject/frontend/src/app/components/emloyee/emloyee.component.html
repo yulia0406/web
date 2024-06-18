@@ -1,0 +1,38 @@
+<!-- <div class="container"> -->
+    <div class="bg-light p-5 rounded">
+        <h1>Сотрудник</h1>
+        <hr>
+        <p>ФИО: {{employee ? employee.name : ""}}</p>
+        <p>Пол: {{employee ? employee.gender : ""}}</p>
+        <p>Дата рождения: {{employee ? (employee.birthdate | date:'dd.MM.yyyy') : ""}}</p>
+        <p>Номер: {{employee ? employee.number : ""}}</p>
+        <p>Департамент: {{employee ? employee.department.name : ""}}</p>
+        <p>Должность: {{employee ? employee.job.name : ""}}</p>
+        <button class="btn btn-primary" (click)="addOperation()">Добавить операцию</button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" class="col">№</th>
+                    <th scope="col" class="col">Название</th>
+                    <th scope="col" class="col">Дата</th>
+                    <th scope="col" class="col">Тип операции</th>
+                    <th scope="col" class="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employeeOperation of employeeOperations; index as i" >
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{employeeOperation.operation.name}}</td>
+                    <td>{{employeeOperation.operation.date | date:'dd.MM.yyyy'}}</td>
+                    <td>{{employeeOperation.operation.typeOperation.name}}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" (click)="deleteOperation(employeeOperation.id, i)">Удалить</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<!-- </div> -->
+

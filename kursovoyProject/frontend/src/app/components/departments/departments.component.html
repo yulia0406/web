@@ -1,0 +1,30 @@
+
+    <div class="bg-light p-5 rounded">
+        
+        <h1>Департаменты <img src="assets/departments.png" width="20" height="20"></h1> 
+        <hr>
+        <div class="mb-4">
+            <th><button class="btn btn-primary" (click)="openDepartmentForm()">Добавить</button></th>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" class="col-1">№</th>
+                    <th scope="col" class="col-10">Название</th>
+                    <th scope="col" class="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let department of departments; let i = index" (dblclick) = "openDepartment(department.id)">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{department.name}}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" (click)="openUpdateForm(department.id, i)">Изменить</button>
+                            <button class="btn btn-primary" (click)="deleteDepartment(department.id, i)">Удалить</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

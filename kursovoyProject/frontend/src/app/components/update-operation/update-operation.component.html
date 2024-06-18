@@ -1,0 +1,22 @@
+<div class="m-4">
+    <h2>{{title}}</h2>
+    <hr>
+    <div>
+        <div class="form-group mb-4">
+            <label>Введите название операции</label>
+            <input type="text" class="form-control" placeholder="Название операции" [(ngModel)]="name">
+        </div>
+        <div class="form-group mb-4">
+            <label>Введите дату операции</label>
+            <input type="date" class="form-control" [(ngModel)]="date">
+        </div>
+        <div class="form-group mb-4">
+            <label>Введите тип операции</label>
+            <input readonly type="text" class="form-control" (click)="openTypeOperations()" value="{{ typeOperation ? typeOperation.name : ''}}">
+        </div>
+    </div>
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-primary" (click)="save()">Сохранить</button>
+        <button class="btn btn-danger" (click)="close()">Закрыть</button>
+    </div>
+</div>

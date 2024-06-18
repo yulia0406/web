@@ -1,0 +1,17 @@
+<div class="m-4">
+    <h2>Список должностей</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col" class="col-1">№</th>
+                <th scope="col" class="col-3">Название</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let job of jobs; let i = index" (click)="save(job)">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{job.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
